@@ -1,6 +1,8 @@
 const vscode = require("vscode");
 
-exports.activate = function (context) {
+function activate(context) {
+  console.log("Activating the Markdown Checkmarks extension");
+
   let disposable = vscode.commands.registerCommand(
     "extension.markdownCheckmarks",
     () => {
@@ -23,8 +25,7 @@ exports.activate = function (context) {
             lineNumber++
           ) {
             const line = document.lineAt(lineNumber);
-            const contents = line.text;
-
+            let contents = line.text;
             let newContents;
 
             if (contents.includes("- ")) {
@@ -43,9 +44,10 @@ exports.activate = function (context) {
               newContents = "- " + contents;
             }
 
-            if (newContents) {
-              const range = new vscode.Range(line.start, line.end);
-              editBuilder.replace(range, newContents);
+            if (newContents && newContents !== contents) {
+              // const range = new vscode.Range(line.start, line.end);
+              // editBuilder.replace(range, newContents);
+              editBuilder.replace(line.range, newContents);
             }
           }
         }
@@ -54,6 +56,11 @@ exports.activate = function (context) {
   );
 
   context.subscriptions.push(disposable);
-};
+}
 
-exports.deactivate = () => {};
+function deactivate() {}
+
+module.exports = {
+  activate,
+  deactivate,
+};
