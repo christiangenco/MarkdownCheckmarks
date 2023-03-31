@@ -19,7 +19,7 @@ It will toggle between `-`, `- [ ]`, and `- [x]` at the beginning of the selecte
 
 ## Installation
 
-You can install the extension through the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=YOUR_PUBLISHER_NAME.markdown-checkmarks) or by following the instructions to package and [install it locally](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
+You can install the extension through the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=GencoCocoaCorp.markdown-checkmarks) or by following the instructions to package and [install it locally](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
 
 ## Contributing
 
